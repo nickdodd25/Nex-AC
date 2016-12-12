@@ -95,7 +95,6 @@ It also simplifies the translation of anti-cheat to other languages
 * SetPlayerInterior
 * PutPlayerInVehicle
 * ResetPlayerWeapons
-* SetPlayerDrunkLevel
 * SetPlayerArmedWeapon
 * SetPlayerSpecialAction
 * TogglePlayerSpectating
@@ -144,11 +143,11 @@ Added in v1.3:
 >  * Return `1 (true)` if enabled or `0 (false)` if disabled
 
 
-#### IsAntiCheatEnabledForPlayer(acid, playerid)
+#### IsAntiCheatEnabledForPlayer(playerid, acid)
 
 > Use to check enable/disable one of the anti-cheats for a particular player
->  * `acid` - ID of the anti-cheat
 >  * `playerid` - ID of the player who needs for check enable/disable the anti-cheat
+>  * `acid` - ID of the anti-cheat
 >  * Return `1 (true)` if enabled or `0 (false)` if disabled
 
 
@@ -393,7 +392,8 @@ The script can be configured at any of the available languages. To do this, just
 2. Download the language file *(.lang)* on your preferred language
 3. Copy both files to the folder *"/pawno/include"* which is located in the folder with the server
 4. In gamemode and all filterscripts after *#include "a_samp"* write the following: *#include "nex-ac"*  
-*Warning! If you are using a Streamer Plugin by Incognito, include it before nex-ac!*
+***Warning! If you are using a Streamer Plugin by Incognito, foreach or y_hooks, include it before nex-ac!***  
+*Also keep in mind that filterscript must have "#define FILTERSCRIPT" before including anticheat*
 5. Compile the modified scripts
 
 *You gets an error when you compiling this anticheat with YSI? Check out [some tips](http://forum.sa-mp.com/showpost.php?p=3556462&postcount=202)*
@@ -424,6 +424,7 @@ Currently they were not detected. If you find a bug, please let me know about it
 * Ben_Lovejoy - Finnish translation
 * Rengar - Latvian translation
 * bgedition - Bulgarian translation
+* Jensenn - Turkish translation
 
 This script also contains materials of third-party projects with open source.
 
